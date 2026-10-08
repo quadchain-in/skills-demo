@@ -1,0 +1,51 @@
+2026-10-08 16:00:19,150 - INFO - \U0001f680 Starting Agentic RAG API server...
+2026-10-08 16:00:19,151 - INFO - \U0001f4d6 API Documentation: http://localhost:8000/docs
+2026-10-08 16:03:09,544 - INFO - Received query request: Tell me about WEO in 2026
+2026-10-08 16:03:09,544 - INFO - [USER QUERY]: Tell me about WEO in 2026
+2026-10-08 16:03:09,548 - WARNING - Default value is not supported in function declaration schema for Google AI.
+2026-10-08 16:03:10,082 - INFO - Sending out request, model: gemini-3.5-flash-lite, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-10-08 16:03:11,628 - INFO - Response received from the model.
+2026-10-08 16:03:11,628 - WARNING - Warning: there are non-text parts in the response: ['function_call'], returning concatenated text result from text parts. Check the full candidates.content.parts accessor to get the full model response.
+2026-10-08 16:03:11,634 - INFO - [SEARCH] Vector Search: '2026'
+2026-10-08 16:03:12,402 - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+2026-10-08 16:03:15,539 - INFO - HTTP Request: POST https://rdrpdvxnpbtypcmiftwi.supabase.co/rest/v1/rpc/match_documents "HTTP/2 200 OK"
+2026-10-08 16:03:15,539 - WARNING - Default value is not supported in function declaration schema for Google AI.
+2026-10-08 16:03:16,155 - INFO - Sending out request, model: gemini-3.5-flash-lite, backend: GoogleLLMVariant.GEMINI_API, stream: False
+2026-10-08 16:03:18,908 - INFO - Response received from the model.
+2026-10-08 16:03:18,908 - INFO - [RAW RESPONSE]:
+{
+  "analysis": "According to the IMF World Economic Outlook (WEO) projections, global macroeconomic conditions for 2026 point to a moderation in growth compared to previous trends. World output at market exchange rates is projected to grow by 2.6 percent in both 2025 and 2026, slowing down from 2.8 percent in 2024. For emerging market and developing economies, growth is expected to moderate to 3.1 percent in 2026 (down from 3.2 percent in 2025 and 3.3 percent in 2024). In the United States, growth is forecasted at 2.1 percent in 2026, supported by factors like lower effective tariff rates and the fiscal boost from the One Big Beautiful Bill Act (OBBBA), though offset by fiscal deterioration and tariff revenue impacts, with the probability of a US recession in 2026 assessed at about 30 percent. In the euro area, growth is expected to edge up slightly or stabilize at around 1.1 percent in 2026, reflecting potential growth rates amidst elevated uncertainty, higher trade friction, and wider fiscal deficits in nations like Germany due to increased infrastructure and military spending.",
+  "chart_data": [
+    {
+      "series": "Global GDP Growth",
+      "x_axis": "2024",
+      "y_axis": 2.8
+    },
+    {
+      "series": "Global GDP Growth",
+      "x_axis": "2025",
+      "y_axis": 2.6
+    },
+    {
+      "series": "Global GDP Growth",
+      "x_axis": "2026",
+      "y_axis": 2.6
+    },
+    {
+      "series": "Emerging Market and Developing Economies Growth",
+      "x_axis": "2024",
+      "y_axis": 3.3
+    },
+    {
+      "series": "Emerging Market and Developing Economies Growth",
+      "x_axis": "2025",
+      "y_axis": 3.2
+    },
+    {
+      "series": "Emerging Market and Developing Economies Growth",
+      "x_axis": "2026",
+      "y_axis": 3.1
+    }
+  ]
+}
+2026-10-08 16:03:18,908 - INFO - Successfully processed query and returning response.
