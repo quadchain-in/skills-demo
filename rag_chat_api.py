@@ -73,6 +73,9 @@ class QueryResponse(BaseModel):
     question: str
     response: AnalysisResponse
 
+class ExampleQueriesResponse(BaseModel):
+    examples: List[str]
+
 # ============================================================================
 # Core RAG Functions
 # ============================================================================
@@ -180,6 +183,18 @@ async def run_agentic_rag(query: str) -> Dict[str, Any]:
 # ============================================================================
 # API Endpoints
 # ============================================================================
+
+@app.get("/examples", response_model=ExampleQueriesResponse)
+async def get_example_queries() -> ExampleQueriesResponse:
+    """Return example questions users can ask the WEO database."""
+    return ExampleQueriesResponse(
+        examples=[
+            "What are the global GDP growth projections for 2025 and 2026?",
+            "How do growth forecasts compare between advanced economies and emerging markets?",
+            "What are the projected trends in global inflation?",
+            "How are energy and food commodity prices expected to change?",
+        ]
+    )
 
 @app.get("/health")
 async def health_check():
